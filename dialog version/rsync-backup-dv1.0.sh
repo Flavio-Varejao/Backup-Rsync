@@ -1,49 +1,5 @@
 #!/usr/bin/env bash
 #
-# rsync-backup-dv1.0.sh - Backup com a ferramenta rsync
-#
-# Site:     
-# Autor:      Flávio Varejão
-# Manutenção: Flávio Varejão
-# --------------------------------------------------------------------------------------------------------------------------- #
-# Este script faz o backup de arquivos locais ou remotos utilizando a ferramenta rsync 
-# Essa versão utiliza caixas de diálogo do DIALOG. Leia as instruções a seguir.
-#
-# Dê permissão de execução (primeiro acesso):
-#   $ chmod +x rsync-backup-dv1.0.sh
-#
-# Exemplos:
-#   $ ./rsync-backup-dv1.0.sh
-#   Neste exemplo o script vai perguntar se você deseja fazer um backup.
-#
-# Na execução do script é possível escolher o diretório de origem e de destino dos arquivos.
-# No término do backup é gerado um arquivo log com informações do backup 
-# (data, hora, arquivos copiados, etc).
-#
-# Opções incluídas no comando rsync:
-# -a Agrupa todas essas opções -rlptgoD (recursiva, links, permissões, horários, grupo, proprietário, dispositivos);
-# -v Modo verboso (mostra o processo);
-# -h Números compreensíveis para humanos;
-# -P Exibe os tempos de transferência, nomes dos arquivos e diretórios sincronizados;
-# -z Comprime os arquivos ou diretórios;
-# -e ssh Utiliza o protocolo de rede SSH;
-# --delete-after Após a transferência exclui arquivos do destino que não estão na origem (sincroniza os diretórios);
-# --progress Mostra o progresso durante a transferência.
-#
-# Para incluir novas opções (rsync --help) altere o comando rsync na seção de FUNÇÕES.   
-# --------------------------------------------------------------------------------------------------------------------------- #
-# Histórico:
-#   Versão 1.0, Flávio:
-#     25/03/2020
-#       - Início do programa
-#       - Adicionado variáveis, testes, funções e execução
-#     28/03/2020         
-#       - Adicionado barras de progresso
-#     31/07/2020
-#       - Alterações no cabeçalho do script e no comando do backup remoto
-# --------------------------------------------------------------------------------------------------------------------------- #
-# Testado em:
-#   bash 4.4.20 
 # --------------------------------------------------------------------------------------------------------------------------- #
 # ------------------------------------------------ VARIÁVEIS------------------------------------------------- #
 LOG="$(date +%m%Y)"
